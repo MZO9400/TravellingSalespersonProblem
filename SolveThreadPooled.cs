@@ -6,7 +6,6 @@ namespace TravellingSalespersonProblem {
 	public class SolveThreadPooled : ISolver {
 		private SortedDictionary<int, List<int>> CompleteTour(Graph graph, List<int> tour, HashSet<int> visited, int weight = 0) {
 			SortedDictionary<int, List<int>> tours = new();
-			int threadCounter = 0;
 			if (tour.Count == graph.Nodes.Count) {
 				int completeWeight = weight + (graph.GetWeight(tour[0], tour[^1]) ?? 0);
 				tours.Add(completeWeight, new List<int>(tour) { tour[0] });
@@ -17,7 +16,6 @@ namespace TravellingSalespersonProblem {
 				HashSet<int> newVisited = new(visited) { node };
 				SortedDictionary<int, List<int>> childTours;
 				ThreadPool.QueueUserWorkItem( delegate {
-					threadCounter++;
 					childTours = this.CompleteTour(graph, newTour, newVisited,
 						weight + graph.GetWeight(tour.Last(), node) ?? weight);
 					foreach (KeyValuePair<int, List<int>> childTour in childTours) {
@@ -25,8 +23,6 @@ namespace TravellingSalespersonProblem {
 						if (tours.ContainsKey(key)) continue;
 						tours.Add(key, value);
 					}
-
-					threadCounter--;
 				});
 			}
 			return tours;
