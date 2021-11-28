@@ -9,7 +9,7 @@ namespace TravellingSalespersonProblem {
 		public int From { get; }
 		public int To { get; }
 		public double Weight { get; }
-		
+
 		public override string ToString() {
 			return $"{this.From} -> {this.To}: ({this.Weight})";
 		}
