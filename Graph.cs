@@ -42,5 +42,9 @@ namespace TravellingSalespersonProblem {
 			Edge? edge = this.GetEdgeIfExists(from, to);
 			return edge?.Weight;
 		}
+
+		public override string ToString() {
+			return this.Edges.Aggregate("", (current, edge) => current + $"{edge}\n");
+		}
 	}
 }
