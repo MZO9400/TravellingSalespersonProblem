@@ -21,7 +21,11 @@ namespace TravellingSalespersonProblem {
 			this.Edges.Add(new Edge(from, to, weight));
 			return this;
 		}
-		
+
+		public Graph AddEdge(Edge edge) {
+			return this.AddEdge(edge.From, edge.To, edge.Weight);
+		}
+
 		public Graph RemoveEdge(int from, int to) {
 			Edge? edge = this.GetEdgeIfExists(from, to);
 			if (edge == null) {
