@@ -12,7 +12,7 @@ namespace TravellingSalespersonProblem {
 		public SortedSet<int> Nodes { get; }
 		private List<Edge> Edges { get; }
 
-		public Graph AddEdge(int from, int to, double weight) {
+		public Graph AddEdge(int from, int to, int weight) {
 			if (this.GetWeight(from, to) != null || this.GetWeight(to, from) != null)
 				throw new ArgumentException("Edge already exists");
 			this.Nodes.Add(from);
@@ -39,7 +39,7 @@ namespace TravellingSalespersonProblem {
 			return edge;
 		}
 
-		public double? GetWeight(int from, int to) {
+		public int? GetWeight(int from, int to) {
 			Edge? edge = this.GetEdgeIfExists(from, to);
 			return edge?.Weight;
 		}

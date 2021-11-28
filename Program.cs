@@ -14,7 +14,7 @@ namespace TravellingSalespersonProblem {
 			for (int j = 0; j < nodes.Length; j++) {
 				if (i == j) continue;
 				try {
-					double weight = Math.Round(rnd.NextDouble() * 1000, 2);
+					int weight = rnd.Next(0, 1000);
 					graph.AddEdge(i, j, weight);
 				}
 				catch (ArgumentException) {

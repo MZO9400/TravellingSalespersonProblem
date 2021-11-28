@@ -1,6 +1,6 @@
 namespace TravellingSalespersonProblem {
 	public class Edge {
-		public Edge(int from, int to, double weight) {
+		public Edge(int from, int to, int weight) {
 			this.From = from;
 			this.To = to;
 			this.Weight = weight;
@@ -8,7 +8,7 @@ namespace TravellingSalespersonProblem {
 
 		public int From { get; }
 		public int To { get; }
-		public double Weight { get; }
+		public int Weight { get; }
 
 		public override string ToString() {
 			return $"{this.From} -> {this.To}: ({this.Weight})";
