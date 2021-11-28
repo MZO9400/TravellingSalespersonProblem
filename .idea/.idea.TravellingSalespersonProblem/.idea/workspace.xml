@@ -7,12 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="871b572f-610a-4dd0-b172-ac78e48b191a" name="Changes" comment="Use SortedDictionary type for implementations">
+    <list default="true" id="871b572f-610a-4dd0-b172-ac78e48b191a" name="Changes" comment="Make n threads so the system does not run out of memory">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TravellingSalespersonProblem/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TravellingSalespersonProblem/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISolver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ISolver.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolveSynchronous.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolveSynchronous.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TspSolver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TspSolver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolveThreadPooled.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolveThreadPooled.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolveThreaded.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolveThreaded.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +29,18 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/59b684cc43694ca7bdedde28cb02494d81400/46/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/hamza/RiderProjects/TravellingSalespersonProblem/SolveThreaded.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/hamza/RiderProjects/TravellingSalespersonProblem/SolveThreadPooled.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/hamza/RiderProjects/TravellingSalespersonProblem/SolveThreaded.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/hamza/RiderProjects/TravellingSalespersonProblem/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3839de00d95942b3b2caee2e5f4d441f9e4e00/253/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/hamza/RiderProjects/TravellingSalespersonProblem/SolveThreadPooled.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/hamza/RiderProjects/TravellingSalespersonProblem/SolveThreadPooled.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/72dea6345b13442a92106dd68bee59043f000/98/6bb72fce/TreeSet`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/hamza/RiderProjects/TravellingSalespersonProblem/SolveThreadPooled.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="ProjectId" id="21Y1tu4tNE6VZkpBZc7wNXvmGtL" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -38,6 +48,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.3496609" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="GitStage.ChangesTree.GroupingKeys" value="directory&#10;module&#10;repository" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -53,7 +65,7 @@
   <component name="RunManager">
     <configuration name="TravellingSalespersonProblem" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="$PROJECT_DIR$/bin/Debug/net6.0/TravellingSalespersonProblem" />
-      <option name="PROGRAM_PARAMETERS" value="10 1000" />
+      <option name="PROGRAM_PARAMETERS" value="9 1000" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/bin/Debug/net6.0" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
@@ -80,7 +92,7 @@
       <updated>1638103558336</updated>
       <workItem from="1638103558338" duration="2548000" />
       <workItem from="1638106450349" duration="252000" />
-      <workItem from="1638122618849" duration="796000" />
+      <workItem from="1638122618849" duration="8894000" />
     </task>
     <task id="LOCAL-00001" summary="Create basic Edge class">
       <created>1638106620616</created>
@@ -124,7 +136,56 @@
       <option name="project" value="LOCAL" />
       <updated>1638121056507</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Complete Synchronous solution">
+      <created>1638123478073</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1638123478073</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Create a threaded approach for solving tours">
+      <created>1638128815116</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1638128815116</updated>
+    </task>
+    <task id="LOCAL-00009" summary="WIP: Create a ThreadPooled ISolver class">
+      <created>1638128854958</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1638128854958</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Profile the ISolver implementations">
+      <created>1638128904149</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1638128904149</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Use foreach thread instead of Parallel.ForEach">
+      <created>1638130523423</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1638130523423</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Remove the threadCounter">
+      <created>1638130549860</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1638130549860</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Make n threads so the system does not run out of memory">
+      <created>1638130993746</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1638130993746</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,6 +214,13 @@
     <MESSAGE value="Weight is an integer not a double" />
     <MESSAGE value="Incorporate weights" />
     <MESSAGE value="Use SortedDictionary type for implementations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Use SortedDictionary type for implementations" />
+    <MESSAGE value="Complete Synchronous solution" />
+    <MESSAGE value="Create a threaded approach for solving tours" />
+    <MESSAGE value="WIP: Create a ThreadPooled ISolver class" />
+    <MESSAGE value="Profile the ISolver implementations" />
+    <MESSAGE value="Use foreach thread instead of Parallel.ForEach" />
+    <MESSAGE value="Remove the threadCounter" />
+    <MESSAGE value="Make n threads so the system does not run out of memory" />
+    <option name="LAST_COMMIT_MESSAGE" value="Make n threads so the system does not run out of memory" />
   </component>
 </project>

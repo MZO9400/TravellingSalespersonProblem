@@ -1,7 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace TravellingSalespersonProblem {
 	public class SolveThreaded : ISolver {
@@ -36,11 +36,14 @@ namespace TravellingSalespersonProblem {
 						this.CompleteTour(graph, new List<int> { node }, new HashSet<int> { node });
 					foreach (KeyValuePair<int, List<int>> kvp in newTours) {
 						(int key, var value) = kvp;
-						if (!tours.ContainsKey(key)) {
+						if (tours.ContainsKey(key)) continue;
+						try {
 							tours.Add(key, value);
 						}
+						catch (Exception) {
+							// ignored
+						}
 					}
-
 				});
 				t.Start();
 				threads.Add(t);
