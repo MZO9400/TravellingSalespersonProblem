@@ -31,8 +31,7 @@ namespace TravellingSalespersonProblem {
 				t.Start();
 				threads.Add(t);
 			}
-
-			Parallel.ForEach(threads, t => t.Join());
+			foreach (Thread t in threads) t.Join();
 			return tours;
 		}
 
