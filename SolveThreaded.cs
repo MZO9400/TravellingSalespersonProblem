@@ -5,6 +5,9 @@ using System.Threading;
 
 namespace TravellingSalespersonProblem {
 	public class SolveThreaded : ISolver {
+		
+		private static readonly object LockObject = new();
+		
 		private SortedDictionary<int, List<int>> CompleteTour(Graph graph, List<int> tour, HashSet<int> visited, int weight = 0) {
 			SortedDictionary<int, List<int>> tours = new();
 			if (tour.Count == graph.Nodes.Count) {
@@ -36,12 +39,9 @@ namespace TravellingSalespersonProblem {
 						this.CompleteTour(graph, new List<int> { node }, new HashSet<int> { node });
 					foreach (KeyValuePair<int, List<int>> kvp in newTours) {
 						(int key, var value) = kvp;
-						if (tours.ContainsKey(key)) continue;
-						try {
+						lock (LockObject) {
+							if (tours.ContainsKey(key)) continue;
 							tours.Add(key, value);
-						}
-						catch (Exception) {
-							// ignored
 						}
 					}
 				});

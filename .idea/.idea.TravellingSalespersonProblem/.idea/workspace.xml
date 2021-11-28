@@ -7,7 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="871b572f-610a-4dd0-b172-ac78e48b191a" name="Changes" comment="Make n threads so the system does not run out of memory">
+    <list default="true" id="871b572f-610a-4dd0-b172-ac78e48b191a" name="Changes" comment="MVP 1 comparator is complete&#10;&#10;Finalize codebase for profiling different runner methods">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TravellingSalespersonProblem/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TravellingSalespersonProblem/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SolveThreadPooled.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolveThreadPooled.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SolveThreaded.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolveThreaded.cs" afterDir="false" />
@@ -31,6 +31,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/59b684cc43694ca7bdedde28cb02494d81400/46/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/hamza/RiderProjects/TravellingSalespersonProblem/SolveThreaded.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/hamza/RiderProjects/TravellingSalespersonProblem/SolveThreaded.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/hamza/RiderProjects/TravellingSalespersonProblem/SolveThreadPooled.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/hamza/RiderProjects/TravellingSalespersonProblem/SolveThreaded.cs" root0="SKIP_HIGHLIGHTING" />
@@ -65,7 +66,7 @@
   <component name="RunManager">
     <configuration name="TravellingSalespersonProblem" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="$PROJECT_DIR$/bin/Debug/net6.0/TravellingSalespersonProblem" />
-      <option name="PROGRAM_PARAMETERS" value="9 1000" />
+      <option name="PROGRAM_PARAMETERS" value="8 1000" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/bin/Debug/net6.0" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
@@ -92,7 +93,7 @@
       <updated>1638103558336</updated>
       <workItem from="1638103558338" duration="2548000" />
       <workItem from="1638106450349" duration="252000" />
-      <workItem from="1638122618849" duration="8894000" />
+      <workItem from="1638122618849" duration="9325000" />
     </task>
     <task id="LOCAL-00001" summary="Create basic Edge class">
       <created>1638106620616</created>
@@ -185,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638130993746</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="MVP 1 comparator is complete&#10;&#10;Finalize codebase for profiling different runner methods">
+      <created>1638131882040</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1638131882040</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,6 +229,7 @@
     <MESSAGE value="Use foreach thread instead of Parallel.ForEach" />
     <MESSAGE value="Remove the threadCounter" />
     <MESSAGE value="Make n threads so the system does not run out of memory" />
-    <option name="LAST_COMMIT_MESSAGE" value="Make n threads so the system does not run out of memory" />
+    <MESSAGE value="MVP 1 comparator is complete&#10;&#10;Finalize codebase for profiling different runner methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="MVP 1 comparator is complete&#10;&#10;Finalize codebase for profiling different runner methods" />
   </component>
 </project>
