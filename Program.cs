@@ -24,7 +24,13 @@ namespace TravellingSalespersonProblem {
 
 			Console.WriteLine("Graph:");
 			Console.WriteLine(graph);
-
+			
+			TspSolver solver = new(graph);
+			List<KeyValuePair<int, List<int>>> tour = solver.Solve(new SolveSynchronous());
+			Console.WriteLine("Tour:");
+			foreach ((int key, var value) in tour) {
+				Console.WriteLine($"{key} -> {string.Join(", ", value)}");
+			}
 		}
 	}
 }
