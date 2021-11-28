@@ -1,32 +1,30 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace TravellingSalespersonProblem {
 	internal static class Program {
 		private static void Main() {
 			Graph graph = new();
-			int[] nodes = new int[20];
+			int[] nodes = new int[5];
 			Random rnd = new();
-			for (int i = 0; i < nodes.Length; i++) {
-				nodes[i] = rnd.Next(0, 10);
-			}
+			for (int i = 0; i < nodes.Length; i++) nodes[i] = rnd.Next(0, 10);
 
-			Edge[] edges = new Edge[nodes.Length];
-			for (int i = 0; i < edges.Length; i++) {
-				int node1 = rnd.Next(0, nodes.Length);
-				int node2 = rnd.Next(0, nodes.Length);
-				double weight = Math.Round(rnd.NextDouble() * 1000, 2);
-				edges[i] = new Edge(node1, node2, weight);
+			for (int i = 0; i < nodes.Length; i++)
+			for (int j = 0; j < nodes.Length; j++) {
+				if (i == j) continue;
 				try {
-					graph.AddEdge(edges[i]);
+					double weight = Math.Round(rnd.NextDouble() * 1000, 2);
+					graph.AddEdge(i, j, weight);
 				}
 				catch (ArgumentException) {
-					Console.WriteLine("Edge {0} already exists, ignoring", edges[i]);
-					i--;
+					// ignored
 				}
 			}
-			
+
 			Console.WriteLine("Graph:");
 			Console.WriteLine(graph);
+
 		}
 	}
 }
