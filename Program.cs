@@ -26,10 +26,10 @@ namespace TravellingSalespersonProblem {
 			Console.WriteLine(graph);
 			
 			TspSolver solver = new(graph);
-			List<KeyValuePair<int, List<int>>> tour = solver.Solve(new SolveSynchronous());
+			SortedDictionary<int, List<int>> tour = solver.Solve(new SolveSynchronous());
 			Console.WriteLine("Tour:");
-			foreach ((int key, var value) in tour) {
-				Console.WriteLine($"{key} -> {string.Join(", ", value)}");
+			foreach (KeyValuePair<int, List<int>> kvp in tour) {
+				Console.WriteLine($"{kvp.Key}: {string.Join(", ", kvp.Value)}");
 			}
 		}
 	}

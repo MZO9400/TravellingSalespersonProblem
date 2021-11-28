@@ -8,7 +8,7 @@ namespace TravellingSalespersonProblem {
 			this.graph = graph;
 		}
 
-		public List<KeyValuePair<int, List<int>>> Solve(ISolver solver) {
+		public SortedDictionary<int, List<int>> Solve(ISolver solver) {
 			return solver.FindAllSolutions(this.graph);
 		}
 	}

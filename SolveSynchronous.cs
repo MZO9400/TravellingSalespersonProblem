@@ -4,34 +4,40 @@ using System.Linq;
 namespace TravellingSalespersonProblem {
 	public class SolveSynchronous : ISolver {
 		
-		private List<KeyValuePair<int, List<int>>> GetAllTours(Graph graph, int n) {
-			return this.GetAllTours(graph, new List<int> { n }, new HashSet<int> { n });
+		private SortedDictionary<int, List<int>> GetAllTours(Graph graph, int n) {
+			return this.CompleteTour(graph, new List<int> { n }, new HashSet<int> { n });
 		}
 
-		private List<KeyValuePair<int, List<int>>> GetAllTours(Graph graph, List<int> tour, HashSet<int> visited, int weight = 0) {
-			List<KeyValuePair<int, List<int>>> tours = new();
-			if (tour.Count == graph.Nodes.Count) tours.Add(new KeyValuePair<int, List<int>>(weight, tour));
+		private SortedDictionary<int, List<int>> CompleteTour(Graph graph, List<int> tour, HashSet<int> visited, int weight = 0) {
+			SortedDictionary<int, List<int>> tours = new();
+			if (tour.Count == graph.Nodes.Count) tours.Add(weight, tour);
 			foreach (int node in graph.Nodes.Where(n => !visited.Contains(n))) {
 				List<int> newTour = new(tour) { node };
 				HashSet<int> newVisited = new(visited) { node };
-				tours.AddRange(this.GetAllTours(graph, newTour, newVisited, weight + graph.GetWeight(tour.Last(), node) ?? weight));
+				SortedDictionary<int, List<int>> childTours = this.CompleteTour(graph, newTour, newVisited,
+					weight + graph.GetWeight(tour.Last(), node) ?? weight);
+				foreach ((int key, var value) in childTours) {
+					if (!tours.ContainsKey(key)) {
+						tours.Add(key, value);
+					}
+				}
 			}
 
 			return tours;
 		}
 
-		public List<KeyValuePair<int, List<int>>> FindAllSolutions(Graph graph) {
+		public SortedDictionary<int, List<int>> FindAllSolutions(Graph graph) {
 			int[] nodes = graph.Nodes.ToArray();
-			List<KeyValuePair<int, List<int>>> tours = new();
+			SortedDictionary<int, List<int>> tours = new();
 			foreach (int node in nodes) {
-				List<KeyValuePair<int, List<int>>> newTours = this.FindAllSolutions(graph, node);
-				tours.AddRange(newTours);
+				SortedDictionary<int, List<int>> newTours = this.GetAllTours(graph, node);
+				foreach ((int key, var value) in newTours) {
+					if (!tours.ContainsKey(key)) {
+						tours.Add(key, value);
+					}
+				}
 			}
 			return tours;
-		}
-
-		private List<KeyValuePair<int, List<int>>> FindAllSolutions(Graph graph, int startingNode) {
-			return this.GetAllTours(graph, startingNode);
 		}
 	}
 }

@@ -7,7 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="871b572f-610a-4dd0-b172-ac78e48b191a" name="Changes" comment="Weight is an integer not a double">
+    <list default="true" id="871b572f-610a-4dd0-b172-ac78e48b191a" name="Changes" comment="Incorporate weights">
       <change beforePath="$PROJECT_DIR$/ISolver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ISolver.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SolveSynchronous.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolveSynchronous.cs" afterDir="false" />
@@ -31,15 +31,18 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Users/hamza/RiderProjects/TravellingSalespersonProblem/Program.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/hamza/RiderProjects/TravellingSalespersonProblem/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/hamza/RiderProjects/TravellingSalespersonProblem/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/hamza/RiderProjects/TravellingSalespersonProblem/SolveSynchronous.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/hamza/RiderProjects/TravellingSalespersonProblem/Graph.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/hamza/RiderProjects/TravellingSalespersonProblem/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/hamza/RiderProjects/TravellingSalespersonProblem/ISolver.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/hamza/RiderProjects/TravellingSalespersonProblem/ISolver.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/hamza/RiderProjects/TravellingSalespersonProblem/Edge.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/hamza/RiderProjects/TravellingSalespersonProblem/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/hamza/RiderProjects/TravellingSalespersonProblem/Graph.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/hamza/RiderProjects/TravellingSalespersonProblem/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/hamza/RiderProjects/TravellingSalespersonProblem/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/hamza/RiderProjects/TravellingSalespersonProblem/Graph.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/hamza/RiderProjects/TravellingSalespersonProblem/Graph.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -121,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638119846482</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Incorporate weights">
+      <created>1638120141309</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1638120141309</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,6 +158,7 @@
     <MESSAGE value="IDEA workspace.xml" />
     <MESSAGE value="Add Program.cs" />
     <MESSAGE value="Weight is an integer not a double" />
-    <option name="LAST_COMMIT_MESSAGE" value="Weight is an integer not a double" />
+    <MESSAGE value="Incorporate weights" />
+    <option name="LAST_COMMIT_MESSAGE" value="Incorporate weights" />
   </component>
 </project>
