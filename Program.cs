@@ -1,36 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Diagnostics;
 
 namespace TravellingSalespersonProblem {
 	internal static class Program {
-		private static void Main() {
+		private static void Main(string[] args) {
+			int numCities = int.Parse(args[0]);
+			int maxDistance = int.Parse(args[1]);
 			Graph graph = new();
-			int[] nodes = new int[5];
 			Random rnd = new();
-			for (int i = 0; i < nodes.Length; i++) nodes[i] = rnd.Next(0, 10);
 
-			for (int i = 0; i < nodes.Length; i++)
-			for (int j = 0; j < nodes.Length; j++) {
-				if (i == j) continue;
-				try {
-					int weight = rnd.Next(0, 1000);
-					graph.AddEdge(i, j, weight);
-				}
-				catch (ArgumentException) {
-					// ignored
+			for (int i = 0; i < numCities; i++) {
+				for (int j = i; j < numCities; j++) {
+					if (i != j) {
+						graph.AddEdge(i, j, rnd.Next(1, maxDistance));
+					}
 				}
 			}
 
-			Console.WriteLine("Graph:");
-			Console.WriteLine(graph);
-			
 			TspSolver solver = new(graph);
-			SortedDictionary<int, List<int>> tour = solver.Solve(new SolveSynchronous());
-			Console.WriteLine("Tour:");
-			foreach (KeyValuePair<int, List<int>> kvp in tour) {
-				Console.WriteLine($"{kvp.Key}: {string.Join(", ", kvp.Value)}");
-			}
+			// clock the solver
+			Stopwatch sw = new();
+			sw.Start();
+			(int key, var value) = solver.Solve(new SolveSynchronous());
+			sw.Stop();
+			Console.WriteLine($"Solved in {sw.ElapsedMilliseconds}ms");
+			Console.WriteLine("Best tour:");
+			Console.WriteLine($"{key}: {string.Join(" -> ", value)}");
 		}
 	}
 }

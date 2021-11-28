@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -10,7 +11,11 @@ namespace TravellingSalespersonProblem {
 
 		private SortedDictionary<int, List<int>> CompleteTour(Graph graph, List<int> tour, HashSet<int> visited, int weight = 0) {
 			SortedDictionary<int, List<int>> tours = new();
-			if (tour.Count == graph.Nodes.Count) tours.Add(weight, tour);
+			if (tour.Count == graph.Nodes.Count) {
+				int completeWeight = weight + (graph.GetWeight(tour[0], tour[^1]) ?? 0);
+				tours.Add(completeWeight, new List<int>(tour) { tour[0] });
+				return tours;
+			}
 			foreach (int node in graph.Nodes.Where(n => !visited.Contains(n))) {
 				List<int> newTour = new(tour) { node };
 				HashSet<int> newVisited = new(visited) { node };
@@ -38,6 +43,10 @@ namespace TravellingSalespersonProblem {
 				}
 			}
 			return tours;
+		}
+		
+		public KeyValuePair<int, List<int>> FindBestSolution(Graph graph) {
+			return this.FindAllSolutions(graph).First();
 		}
 	}
 }
